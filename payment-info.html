@@ -1,158 +1,94 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Customer Info</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
 <body>
-    
-    <div class="contenedor">
 
-        <div class="checkout-menu">
-
-            <a href="customer-info.html">01 CUSTOMER INFO</a>
-            <a href="shipping-info.html">02 SHIPPING INFO</a>
-            <a href="payment-info.html">03 PAYMENT SELECTION</a>
-
-        </div>
-
-
+<main>
+  <div class="container">
+    <div class="col">
+      <ul>
+        <li><a href="customer-info.html">01 customer info</a></li>
+        <li><a href="shipping-info.html">02 shipping info</a></li>
+        <li><a href="#">03 payment seklection</a></li>
+      </ul>
+      <h1>payment selection</h1>
         <form action="">
-            <div class="container">
-                <fieldset>
-                    <h2 role="heading" id="credit-card">Payment Information</h2>
-                    <div aria-labelledby="credit-card">
-                        <div class="col">
-                            <div class="col">
-                                <input type="radio" name="payment" id="payment">
-                                <label for="payment">Credit Card</label>
-                            </div>
-                            <div class="col">
-                                <img src="images/cards.png" with="106" height="22" alt="">
-                            </div>
-
-                            <p>Safe money transfer using your bank account. Visa, Maestro, Discover, American Express.</p>
-
-                            <div>
-                                <label for="card-number">Card Number</label>
-                                <input type="text" id="card-number" placeholder="0000 0000 0000 0000">
-                                <span></span>
-                            </div>
-
-                            <div>
-                                <label for="card-name">Card Name</label>
-                                <input type="text" id="card-name">
-                                <label for="card-expire">Expire Date</label>
-                                <input type="text" id="card-expire" placeholder="MM/YY">
-                                <label for="card-cvv">CVV</label>
-                                <input type="text" id="card-cvv">
-                            </div>
-
-                        </div>
-                        
-                        <div class="col">
-                            <div class="col">
-                                    <input type="radio" name="payment" id="payment">
-                                <label for="payment">Paypal</label>
-                            </div>
-                            <div class="col">
-                                <img src="images/paypal.png" alt="">
-                            </div>
-
-                            <p>You will be redirected to PayPal website to complete your purchase securely.</p>
-
-                        </div>
-                        
-                    </div>
-                </fieldset>
+          <div class="container">
+            <div aria-labelledby="payment-method">                    
+              <div>
+                <input type="radio" name="payment-method" id="credit-card">
+                <label for="credit-card">credit card</label>
+                <img src="images/cards.png" with="106" height="22" alt="">
+                <p aria-describedby="credit-card">Safe money transfer using your bank account. Visa, Maestro, Discover, American Express.</p>
+                <div>
+                  <label for="card-number">Card Number</label>
+                  <input type="number" id="card-number" placeholder="0000 0000 0000 0000">
+                </div>
+                <div>
+                  <label for="card-name">Card Name</label>
+                  <input type="text" id="card-name">
+                </div>
+                <div>
+                  <label for="card-expire">Expire Date</label>
+                  <input type="text" id="card-expire" placeholder="MM/YY">
+                </div>
+                <div>
+                  <label for="card-cvv">CVV</label>
+                  <input type="number" id="card-cvv">
+                </div>
+              </div>
+              <div>
+                <input type="radio" name="payment-method" id="paypal">
+                <label for="paypal">paypal</label>
+                <img src="images/paypal.png" alt="">
+                <p aria-describedby="paypal">You will be redirected to PayPal website to complete your purchase securely.</p>
+              </div>
             </div>
-
-
-               <div>
-                   <a href="#">&leftarrow; Back to Shipping Info</a>
-                   <a href="#">COMPLETE ORDER</a>
-               </div>
+          </div>
+          <div>
+            <a href="shipping-info.html">&leftarrow; back to shipping info</a>
+          </div>
+          <div>
+            <button type="submit">complete order</button>
+          </div>
         </form>
-
     </div>
-
-    <div class="aside">
-
-       <div class="container">
-            <div class="col">
-                <h2>Shopping Cart</h2>
-            </div>
-            <div class="col">
-                <span>2</span>
-            </div>
-       </div>
-
-       <div class="container">
-            <div class="container-inner">
-                <div class="col">
-                    <img src="images/producto-2.jpg" alt="Mochila ligera de color gris">
-                </div>
-                <div class="col">
-                    <p>Lightweight College Backpack</p>
-                    <p>€ 99.90</p>
-                </div>
-            </div>
-            <div class="container-inner">
-                <div class="col">
-                    <img src="images/producto-1.jpg" alt="Reloj de cuero a prueba de agua">
-                </div>
-                <div class="col">
-                    <p>Lightweight College Backpack</p>
-                    <p>€ 99.90</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="col">
-                <p>Have a Voucher?</p>
-            </div>
-            <div class="col">
-                <span>&#709;</span>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="container-inner">
-                <div class="col">
-                    <p>Subtotal</p>
-                </div>
-                <div class="col">
-                    <p>€ 169.80</p>
-                </div>
-            </div>
-            <div class="container-inner">
-                <div class="col">
-                    <p>Shipping</p>
-                </div>
-                <div class="col">
-                    <p>Free</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="col">
-                <p>Total</p>
-            </div>
-            <div class="col">
-                <p>€ 169.80</p>
-            </div>
-        </div>
-
+    <div class="col">
+      <h2>shopping cart <span class="cart-count" aria-label="cart-count">2</span></h2>
+      <ul>
+        <li>
+          <img src="images/producto-2.jpg" alt="Mochila ligera de color gris">
+          Lightweight College Backpack <span class="prize">€ 99.90</span>
+        </li>
+        <li>
+          <img src="images/producto-1.jpg" alt="Reloj de cuero a prueba de agua">
+          Business Casual Leather Watch Waterproof <span class="prize">€ 69.90</span>
+        </li>
+      </ul>
+      <p>Have a Voucher? <span>&#709;</span></p>
+      <table>
+        <tr>
+          <td>subtotal</td>
+          <td>€ 169.80</td>
+        </tr>
+        <tr>
+          <td>shipping</td>
+          <td>free</td>
+        </tr>
+        <tr>
+          <td>total</td>
+          <td>€ 169.80</td>
+        </tr>
+      </table>
     </div>
+    </div>
+</main>
 
-
-
-
+  
 </body>
 </html>
