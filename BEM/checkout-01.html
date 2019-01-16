@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  
+  <div class="container">
+    <main>
+
+      <!-- Breadcrumbs -->
+      <ol aria-label="Rastro de migas" class="breadcrum">
+        <li aria-current="true" class="breadcrum--active">Customer info</li>
+        <li>Shipping info</li>
+        <li>Payment selection</li>
+      </ol>
+
+      <!-- Form -->
+      <form action="" class="checkout">
+        <h1 class="title checkout__title">Customer Information</h1>
+        <div>
+          <label for="firstName" class="label checkout__label">First name</label>
+          <input type="text" id="firstName" class="input checkout__input">
+        </div>
+        <div>
+          <label for="LastName" class="label checkout__label">Last name</label>
+          <input type="text" id="LastName" class="input checkout__input">
+        </div>
+        <div>
+          <label for="address" class="label checkout__label">Address</label>
+          <input type="text" id="address" class="input checkout__input">
+        </div>
+        <div>
+          <label for="country" class="label checkout__label">Country</label>
+          <select id="country" class="select checkout__selectList">
+            <option>Seleccionar&hellip;</option>
+            <option value="">....</option>
+          </select>
+        </div>
+        <div>
+          <label for="city" class="label checkout__label">City</label>
+          <input type="text" id="city" class="input checkout__input">
+        </div>
+        <div>
+          <label for="postalcode" class="label checkout__label">Posta code</label>
+          <input type="number" maxlength="5" id="postalcode" class="input checkout__input">
+          <button type="button" class="btn checkout__btn--find">Find</button>
+        </div>
+        <div>
+          <label for="phone" class="label checkout__label">Phone</label>
+          <input type="tel" id="phone" class="input checkout__input">
+        </div>
+
+        <div>
+          <a href="#" class="link checkout__link">Return to Shop</a>
+          <button type="submit" class="btn checkout__btn--submit">Continue to Shipping</button>
+        </div>
+      </form>
+
+    </main>
+
+    <!-- Resumen carrito -->
+    <aside class="summary">
+      <h1 class="title summary__title">Shopping Cart <span aria-label="Número de productos" class="summary__badge">2</span></h1>
+      <ul class="summary__products">
+        <li>
+          <a href="#">
+            <img src="..." alt="">
+            Lightweight College Backpack
+            <span aria-label="precio">€ 99.90</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="..." alt="">
+            Business Casual Leather Watch Waterproof
+            <span aria-label="precio">€ 69.90</span>
+          </a>
+        </li>
+      </ul>
+      <div>
+        <button type="button" class="btn summary__btn">Have a Voucher?</button>
+        <form action="" class="voucher">
+          <label for="code" class="label voucher__label">Insert vaucher code</label>
+          <input type="text" id="code" class="input voucher__input">
+          <button type="submit" class="btn voucher__submit">Submit</button>
+        </form>
+      </div>
+      <table class="summaryTable">
+        <caption class="sr-only">Totales del carrito</caption>
+        <tr>
+          <th scope="row">Subtotal</th>
+          <td>€ 169.80</td>
+        </tr>
+        <tr>
+          <th scope="row">Shipping</th>
+          <td>free</td>
+        </tr>
+        <tr class="">
+          <th scope="row" class="summaryTable__heading">Total</th>
+          <td class="summaryTable__price">€ 169.80</td>
+        </tr>
+      </table>
+    </aside>
+  </div> <!-- //.container -->
+
+</body>
+</html>

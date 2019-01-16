@@ -8,93 +8,100 @@
 </head>
 <body>
 
-<main>
-  <div class="container">
-    <div class="col">
+  <div class="container"><!--Dejar el menu igual al otro-->
+    <main>
+
+      <ol aria-label="Rastro de migas">
+        <li>Customer info</li>
+        <li aria-current="true">Shipping info</li>
+        <li>Payment selection</li>
+      </ol>
+
+      <article>
+        <h1>Shipping Information</h1>
+        <div class="container">
+          <div class="col">
+            <address>
+              Jamy Larson<br>
+              Unit 2 Green Mount Retail Park<br>
+              Halifax<br>
+              HX1 5QN<br>
+              Tel: 0344 332 5931<br>
+            </address>
+            <a href="#">Edit Address</a>
+            <span aria-hidden="true"></span>
+            <a href="#">Add New</a>
+          </div>
+          <div class="col">
+            <img src="..." alt="">
+          </div>
+        </div>
+      </article>
+        
+
+      <form action="">
+        <h1>Shipping Method</h1>
+        <div>
+          <input type="radio" name="shipping" id="standard">
+          <label for="standard" aria-describedby="descStandard">Standard Delivery <span>Free</span></label>
+          <p id="descStandard">Estimated 14-20 Day Shipping (Duties and taxes may be due upon delivery)</p>
+        </div>
+        <div>
+          <input type="radio" name="shipping" id="fast">
+          <label for="fast" aria-describedby="descFast">Fast Delivery <span>€ 8.00</span></label>
+          <p id="descFast">Estimated 2-5 Days Shipping (Duties and taxes may be due upon delivery)</p>
+        </div>
+
+        <div>
+          <a href="#">Back to Customer Info</a>
+          <button type="submit">Continue to payment</button>
+        </div>
+      </form>
+    </main>
+    
+    <aside>
+      <h1>Shopping Cart <span aria-label="Número de productos">2</span></h1>
       <ul>
-        <li><a href="customer-info.html">01 customer info</a></li>
-        <li><a href="#">02 shipping info</a></li>
-        <li><a href="payment-info.html">03 payment seklection</a></li>
+        <li>
+          <a href="#">
+            <img src="..." alt="">
+            Lightweight College Backpack
+            <span aria-label="precio">€ 99.90</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="..." alt="">
+            Business Casual Leather Watch Waterproof
+            <span aria-label="precio">€ 69.90</span>
+          </a>
+        </li>
       </ul>
-      <h1>shipping information</h1>
+      <div>
+        <button type="button">Have a Voucher?</button>
         <form action="">
-          <div class="container">
-              <div class="col">
-                  <article>
-                      <address>
-                          Jamy Larson <br>
-                          Unit 2 Green Mount Retail Park<br>
-                          Halifax<br>
-                          HX1 5QN<br>
-                          Tel:  0344 332 5931<br>
-                      </address>
-                  </article>
-                  <div>
-                      <a href="#">Edit Address</a>
-                      <span>&#149;</span>
-                      <a href="#">Add New</a>
-                  </div>
-              </div>
-              <div class="col">
-                  <img src="images/map.png" alt="Mapa de la direccion de envio">
-              </div>
-          </div>
-          <div class="container">
-            <h1 id="shipping-method">shipping method</h1>
-            <div aria-labelledby="shipping-method">                    
-              <div>
-                <input type="radio" name="shipping-method" id="standar-delivery">
-                <label for="standar-delivery">standar delivery</label>
-                <span>Free</span>
-                <p aria-describedby="standar-delivery">Estimated 14-20 Day Shipping (Duties and taxes may be due upon delivery)</p>
-              </div>
-              <div>
-                <input type="radio" name="shipping-method" id="fast-delivery">
-                <label for="fast-delivery">fast delivery</label>
-                <span>€ 8.00</span>
-                <p aria-describedby="fast-delivery">Estimated 2-5 Days Shipping (Duties and taxes may be due upon delivery)</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <a href="customer-info.html">&leftarrow; Back to Customer Info</a>
-          </div>
-          <div>
-            <button type="submit">continue to payment</button>
-          </div>
+          <label for="code">Insert vaucher code</label>
+          <input type="text" id="code">
+          <button type="submit">Submit</button>
         </form>
-    </div>
-    <div class="col">
-      <h2>shopping cart <span class="cart-count" aria-label="cart-count">2</span></h2>
-      <ul>
-        <li>
-          <img src="images/producto-2.jpg" alt="Mochila ligera de color gris">
-          Lightweight College Backpack <span class="prize">€ 99.90</span>
-        </li>
-        <li>
-          <img src="images/producto-1.jpg" alt="Reloj de cuero a prueba de agua">
-          Business Casual Leather Watch Waterproof <span class="prize">€ 69.90</span>
-        </li>
-      </ul>
-      <p>Have a Voucher? <span>&#709;</span></p>
+      </div>
       <table>
+        <caption class="sr-only">Totales del carrito</caption>
         <tr>
-          <td>subtotal</td>
+          <th scope="row">Subtotal</th>
           <td>€ 169.80</td>
         </tr>
         <tr>
-          <td>shipping</td>
+          <th scope="row">Shipping</th>
           <td>free</td>
         </tr>
-        <tr>
-          <td>total</td>
+        <tr class="">
+          <th scope="row">Total</th>
           <td>€ 169.80</td>
         </tr>
       </table>
-    </div>
-    </div>
-</main>
+    </aside>
+  </div>
 
-  
 </body>
 </html>
