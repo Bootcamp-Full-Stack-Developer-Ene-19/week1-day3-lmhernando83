@@ -6,56 +6,56 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <div class="container">
+
     <main>
 
       <!-- Breadcrumbs -->
       <ol aria-label="Rastro de migas" class="breadcrum">
         <li>Customer info</li>
         <li>Shipping info</li>
-        <li aria-current="true" class="breadcrum--active">Payment selection</li>
+        <li aria-current="true">Payment selection</li>
       </ol>
 
       <!-- Form -->
       <form action="" class="checkout">
-        <h1 class="title checkout__title">Payment Selection</h1>
-        <fieldset class="checkout__fielset">
-          <div>
-            <input type="radio" name="payment" id="creditCard" class="radiocheck checkout__radiocheck">
-            <label for="creditCard" aria-describedby="descCreditCard" class="label checkout__label--radiocheck">Credit Card</label>
-            <p id="descCreditCard" class="checkout__label__desc">Safe money transfer using your bank account. Visa, Maestro, Discover, American Express.</p>
+        <h1 class="checkout__title">Payment Selection</h1>
+        <fieldset>
+          <div class="checkout__img-cards">
+            <input type="radio" name="payment" id="creditCard" class="checkout__radiocheck">
+            <label for="creditCard" aria-describedby="descCreditCard" class="checkout__label checkout__label--radio">Credit Card</label>
+            <p id="descCreditCard" class="checkout__label__desc--wider">Safe money transfer using your bank account. Visa, Maestro, Discover, American Express.</p>
           </div>
           <div>
-            <label for="creditCardNumber" class="label checkout__label">Card number</label>
-            <input type="number" id="creditCardNumber" placeholder="0000 0000 0000 0000" class="input checkout__input">
+            <label for="creditCardNumber" class="checkout__label">Card number</label>
+            <input type="number" id="creditCardNumber" placeholder="0000 0000 0000 0000" class="checkout__input">
           </div>
           <div>
-            <label for="creditCardName" class="label checkout__label">Name on card</label>
-            <input type="text" id="creditCardName" class="input checkout__input">
+            <label for="creditCardName" class="checkout__label">Name on card</label>
+            <input type="text" id="creditCardName" class="checkout__input">
           </div>
           <div>
-            <label for="creditCardExpiry" class="label checkout__label">Expiry date</label>
-            <input type="number" id="creditCardExpiry" placeholder="MM/YY" class="input checkout__input">
+            <label for="creditCardExpiry" class="checkout__label">Expiry date</label>
+            <input type="number" id="creditCardExpiry" placeholder="MM/YY" class="checkout__input">
           </div>
           <div>
-            <label for="creditCardCVV" class="label checkout__label">CVV Code</label>
-            <input type="number" id="creditCardCVV" maxlength="3" class="input checkout__input">
-            <button type="button" class="checkout__cvv">?</button>
+            <label for="creditCardCVV" class="checkout__label">CVV Code</label>
+            <input type="number" id="creditCardCVV" maxlength="3" class="checkout__input">
           </div>
         </fieldset>
 
-        <div>
-          <input type="radio" name="payment" id="payPal" class="radiocheck checkout__radiocheck">
-          <label for="payPal" aria-describedby="descPayPal" class="label checkout__label--radiocheck">PayPal</label>
-          <p id="descPayPal" class="checkout__label__desc">You will be redirected to PayPal website to complete your purchase securely.</p>
+        <div class="checkout__img-paypal">
+          <input type="radio" name="payment" id="payPal" class="checkout__radiocheck">
+          <label for="payPal" aria-describedby="descPayPal" class="checkout__label checkout__label--radio">PayPal</label>
+          <p id="descPayPal" class="checkout__label__desc--wider">You will be redirected to PayPal website to complete your purchase securely.</p>
         </div>
 
-        <div>
-          <a href="#" class="link checkout__link">Back to Shipping Info</a>
+        <div class="checkout__submit">
+          <a href="checkout-02.html" class="link checkout__link"> Back to Shipping Info</a>
           <button type="submit" class="btn checkout__btn--submit">Complete order</button>
         </div>
       </form>
@@ -65,31 +65,31 @@
     <!-- Resumen carrito -->
     <aside class="summary">
       <h1 class="title summary__title">Shopping Cart <span aria-label="Número de productos" class="summary__badge">2</span></h1>
-      <ul class="summary__products">
+      <ul class="summary__product">
         <li>
-          <a href="#">
-            <img src="..." alt="">
+          <a href="#" class="summary__link">
+            <img src="../images/producto-1.jpg" alt="" class="summary__img">
             Lightweight College Backpack
-            <span aria-label="precio">€ 99.90</span>
+            <span aria-label="precio" class="summary__price">€ 99.90</span>
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="..." alt="">
+            <img src="../images/producto-2.jpg" alt="" class="summary__img">
             Business Casual Leather Watch Waterproof
-            <span aria-label="precio">€ 69.90</span>
+            <span aria-label="precio" class="summary__price">€ 69.90</span>
           </a>
         </li>
       </ul>
       <div>
-        <button type="button" class="btn summary__btn">Have a Voucher?</button>
-        <form action="" class="voucher">
+        <button type="button" class="btn summary__btn" aria-haspopup="true" aria-labelledby="toggleVoucher" onclick="myFunction()">Have a Voucher? <span>▼</span></button>
+        <form action="" class="voucher summary__voucher" id="toogleVoucher">
           <label for="code" class="label voucher__label">Insert vaucher code</label>
           <input type="text" id="code" class="input voucher__input">
-          <button type="submit" class="btn voucher__submit">Submit</button>
+          <button type="submit" class="btn voucher__btn--submit">Submit</button>
         </form>
       </div>
-      <table class="summaryTable">
+      <table class="total">
         <caption class="sr-only">Totales del carrito</caption>
         <tr>
           <th scope="row">Subtotal</th>
@@ -99,14 +99,14 @@
           <th scope="row">Shipping</th>
           <td>free</td>
         </tr>
-        <tr class="">
-          <th scope="row" class="summaryTable__heading">Total</th>
-          <td class="summaryTable__price">€ 169.80</td>
+        <tr class="total__result">
+          <th scope="row">Total</th>
+          <td>€ 169.80</td>
         </tr>
       </table>
     </aside>
-  </div> <!-- //.container -->
 
+<script src="../BEM/js/main.js"></script>
 </body>
 
 </html>

@@ -6,58 +6,60 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <div class="container">
+
     <main>
 
       <!-- Breadcrumbs -->
       <ol aria-label="Rastro de migas" class="breadcrum">
         <li>Customer info</li>
-        <li aria-current="true" class="breadcrum--active">Shipping info</li>
+        <li aria-current="true">Shipping info</li>
         <li>Payment selection</li>
       </ol>
 
 
-      <article class="shipInfo">
-        <h1 class="title shipInfo__title">Shipping Information</h1>
+      <article class="ship-info">
+        <h1 class="ship-info__title">Shipping Information</h1>
         <div class="container">
           <div class="col">
-            <address class="shipInfo__address">
-              Jamy Larson<br>
-              Unit 2 Green Mount Retail Park<br>
-              Halifax<br>
-              HX1 5QN<br>
-              Tel: 0344 332 5931<br>
-            </address>
-            <a href="#" class="link shipInfo__link">Edit Address</a>
-            <span aria-hidden="true"></span>
-            <a href="#" class="link shipInfo__link">Add New</a>
+            <article>
+              <address class="ship-info__address">
+                Jamy Larson<br>
+                Unit 2 Green Mount Retail Park<br>
+                Halifax<br>
+                HX1 5QN<br>
+                Tel: 0344 332 5931<br>
+              </address>
+              <a href="#" class="link ship-info__link">Edit Address</a>
+              <span aria-hidden="true"></span>
+              <a href="#" class="link ship-info__link">Add New</a>
+            </article>
           </div>
           <div class="col">
-            <img src="..." alt="">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.6267204802757!2d-3.6210002846789195!3d40.43926376219282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228f2b010006d%3A0xf53e05c7ea1981c4!2sBoream+Digital!5e0!3m2!1ses!2ses!4v1548002516278" width="100%" height="228" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
         </div>
       </article>
 
       <!-- Form -->
       <form action="" class="checkout">
-        <h1 class="title checkout__title">Shipping Method</h1>
-        <div>
-          <input type="radio" name="shipping" id="standard" class="radiocheck checkout__radiocheck">
-          <label for="standard" aria-describedby="descStandard" class="label checkout__label--radiocheck">Standard Delivery <span>Free</span></label>
+        <h1 class="checkout__title">Shipping Method</h1>
+        <div class="cheackout__wrapper">
+          <input type="radio" name="shipping" id="standard" class="checkout__radiocheck">
+          <label for="standard" aria-describedby="descStandard" class="checkout__label checkout__label--radio">Standard Delivery <span>Free</span></label>
           <p id="descStandard" class="checkout__label__desc">Estimated 14-20 Day Shipping (Duties and taxes may be due upon delivery)</p>
         </div>
-        <div>
-          <input type="radio" name="shipping" id="fast" class="radiocheck checkout__radiocheck">
-          <label for="fast" aria-describedby="descFast" class="label checkout__label--radiocheck">Fast Delivery <span>€ 8.00</span></label>
+        <div class="cheackout__wrapper">
+          <input type="radio" name="shipping" id="fast" class="checkout__radiocheck">
+          <label for="fast" aria-describedby="descFast" class="checkout__label checkout__label--radio">Fast Delivery <span>€ 8.00</span></label>
           <p id="descFast" class="checkout__label__desc">Estimated 2-5 Days Shipping (Duties and taxes may be due upon delivery)</p>
         </div>
-
-        <div>
-          <a href="#" class="link checkout__link">Back to Customer Info</a>
+        <div class="checkout__submit">
+          <a href="checkout-01.html" class="link checkout__link"> Back to Customer Info</a>
           <button type="submit" class="btn checkout__btn--submit">Continue to payment</button>
         </div>
       </form>
@@ -67,31 +69,31 @@
     <!-- Resumen carrito -->
     <aside class="summary">
       <h1 class="title summary__title">Shopping Cart <span aria-label="Número de productos" class="summary__badge">2</span></h1>
-      <ul class="summary__products">
+      <ul class="summary__product">
         <li>
-          <a href="#">
-            <img src="..." alt="">
+          <a href="#" class="summary__link">
+            <img src="../images/producto-1.jpg" alt="" class="summary__img">
             Lightweight College Backpack
-            <span aria-label="precio">€ 99.90</span>
+            <span aria-label="precio" class="summary__price">€ 99.90</span>
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="..." alt="">
+            <img src="../images/producto-2.jpg" alt="" class="summary__img">
             Business Casual Leather Watch Waterproof
-            <span aria-label="precio">€ 69.90</span>
+            <span aria-label="precio" class="summary__price">€ 69.90</span>
           </a>
         </li>
       </ul>
       <div>
-        <button type="button" class="btn summary__btn">Have a Voucher?</button>
-        <form action="" class="voucher">
+        <button type="button" class="btn summary__btn" aria-haspopup="true" aria-labelledby="toggleVoucher" onclick="myFunction()">Have a Voucher? <span>▼</span></button>
+        <form action="" class="voucher summary__voucher" id="toogleVoucher">
           <label for="code" class="label voucher__label">Insert vaucher code</label>
           <input type="text" id="code" class="input voucher__input">
-          <button type="submit" class="btn voucher__submit">Submit</button>
+          <button type="submit" class="btn voucher__btn--submit">Submit</button>
         </form>
       </div>
-      <table class="summaryTable">
+      <table class="total">
         <caption class="sr-only">Totales del carrito</caption>
         <tr>
           <th scope="row">Subtotal</th>
@@ -101,14 +103,14 @@
           <th scope="row">Shipping</th>
           <td>free</td>
         </tr>
-        <tr class="">
-          <th scope="row" class="summaryTable__heading">Total</th>
-          <td class="summaryTable__price">€ 169.80</td>
+        <tr class="total__result">
+          <th scope="row">Total</th>
+          <td>€ 169.80</td>
         </tr>
       </table>
     </aside>
-  </div> <!-- //.container -->
 
+<script src="../BEM/js/main.js"></script>
 </body>
 
 </html>
