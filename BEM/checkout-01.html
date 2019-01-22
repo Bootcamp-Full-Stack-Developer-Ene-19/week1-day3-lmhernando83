@@ -24,12 +24,14 @@
         <h1 class="checkout__title">Customer Information</h1>
         
         <div class="checkout__divider">
-          <label for="firstName" class="checkout__label">First name</label>
-          <input type="text" id="firstName" class="checkout__input">
-        </div>
-        <div class="checkout__divider">
-          <label for="LastName" class="checkout__label">Last name</label>
-          <input type="text" id="LastName" class="checkout__input">
+          <div>
+            <label for="firstName" class="checkout__label">First name</label>
+            <input type="text" id="firstName" class="checkout__input">
+          </div>
+          <div>
+            <label for="LastName" class="checkout__label">Last name</label>
+            <input type="text" id="LastName" class="checkout__input">
+          </div>
         </div>
        
         <div class="checkout__wider">
@@ -38,28 +40,30 @@
         </div>
         
         <div class="checkout__divider">
-          <label for="country" class="checkout__label">Country</label>
-          <select id="country" class="checkout__select-list">
-            <option>Seleccionar Your Country</option> 
-            <option value="">....</option>
-          </select>
-        </div>
-        <div class="checkout__divider">
-          <label for="city" class="checkout__label">City</label>
-          <input type="text" id="city" class="checkout__input">
-        </div>
-
-      
-        <div class="checkout__divider checkout__inline">
-          <label for="postalcode" class="checkout__label checkout__label--inline">Postal code</label>
-          <input type="text" maxlength="5" id="postalcode" class="checkout__input checkout__input--inline">
-          <button type="button" id="button" class="btn checkout__btn--find">Find</button>
-        </div>
-        <div class="checkout__divider">
-          <label for="phone" class="checkout__label">Phone</label>
-          <input type="tel" id="phone" class="checkout__input">
+          <div>
+            <label for="country" class="checkout__label">Country</label>
+            <select id="country" class="checkout__select-list">
+              <option>Seleccionar Your Country</option> 
+              <option value="">....</option>
+            </select>
+          </div>
+          <div>
+            <label for="city" class="checkout__label">City</label>
+            <input type="text" id="city" class="checkout__input">
+          </div>
         </div>
 
+        <div class="checkout__divider">
+          <div class="checkout__inline">
+            <label for="postalcode" class="checkout__label checkout__label--inline">Postal code</label>
+            <input type="text" maxlength="5" id="postalcode" class="checkout__input checkout__input--inline">
+            <button type="button" id="button" class="btn checkout__btn--find">Find</button>
+          </div>
+          <div>
+            <label for="phone" class="checkout__label">Phone</label>
+            <input type="tel" id="phone" class="checkout__input">
+          </div>
+        </div>
 
         <div class="checkout__submit">
           <a href="checkout-03.html" class="link checkout__link"> Return to Shop</a>

@@ -1,14 +1,14 @@
 @import "reset.css";
+@import url('https://fonts.googleapis.com/css?family=Sarabun:400,600');
 
+/*------------------------------
+           Global
+--------------------------------*/
 body{
-  font-family: Helvetica, sans-serif;
+  font-family: 'Sarabun', sans-serif;
   display: flex;
   justify-content: space-between;
 }
-
-/*------------------------------
-           Main 
---------------------------------*/
 main {
   width: 100%;
 }
@@ -20,7 +20,7 @@ main {
 .link{
   text-decoration: none;
   color: #0095f8;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
@@ -28,138 +28,154 @@ main {
            Breadcrum 
 --------------------------------*/
 .breadcrum {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
   color: #d4d9dd;
   display: flex;
   justify-content: space-evenly;
-  margin: 0 128px;
-  padding-top: 72px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid grey;
+  margin: 0 8rem;
+  padding-top: 4.5rem;
   text-align: center;
+  counter-reset: number;
+}
+.breadcrum li{
+  border-bottom: 0.063rem solid #e4eaee;
+  height: 3.375rem;
+  width: 100%;
 }
 .breadcrum li[aria-current] {
   color: black;
+  border-bottom: 0.063rem solid black;
+}
+
+.breadcrum li::before {
+  counter-increment: number;
+  content: "0" counter(number) " ";
 }
 
 /*------------------------------
-           Checkout 
+            Form
 --------------------------------*/
 .checkout, .ship-info {
-  padding: 71px 127px 0;
+  padding: 4.438rem 8rem 0;
 }
 .checkout__title, .ship-info__title {
-  font-size: 24px;
-  margin-bottom: 38px;
+  font-size: 1.5rem;
+  margin-bottom: 2.375rem;
 }
-.checkout .checkout__divider {
+.checkout__divider{
+  display: flex;
+}
+.checkout__divider > div {
   width: 50%;
-  float: left;
 }
-.checkout__wider{
-  width: 100%;
+.checkout__divider > div + div {
+  margin-left: 1.375rem;
 }
 
 /*
-        Checkout labels
+          Labels
 --------------------------------*/
 .checkout__label {
   color: #d4d9dd;
   display: block;
-  font-size: 12px;
-  margin-bottom: 6px;
+  font-size: 0.75rem;
+  margin-bottom: 0.375rem;
 }
 
 /*
-      Checkout inputs
+          Inputs
 --------------------------------*/
 .checkout__input {
   width: 100%;
-  height: 54px;
-  margin-bottom: 33px;
-  border: 1px solid #dde3e8;
-  border-radius: 8px;
-  font-size: 16px;
-  padding: 0 25px;
+  height: 3.375rem;
+  margin-bottom: 2.063rem;
+  border: 0.063rem solid #dde3e8;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  padding: 0 1.563rem;
   color: #1b2125;
 }
 
 /*
-    Checkout inputs btn inline
+        Inputs inline
 --------------------------------*/
 .checkout__inline {
   display: flex;
   align-items: end;
   position: relative;
-  top: 18px;
+  top: 1.125rem;
 }
 .checkout__input--inline{
-  border-radius: 8px 0 0 8px;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 .checkout__label--inline {
   display: block;
   position: absolute;
-  top: -18px;
-}
-.checkout__btn--find {
-  border: 1px solid #dde3e8;
-  color: #0095f8;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 20px;
-  border-radius: 0 8px 8px 0;
-  height: 54px;
+  top: -1.125rem;
 }
 
 /*
-    Checkout radio inputs
+          Btn inline
+--------------------------------*/
+.checkout__btn--find {
+  border: 0.063rem solid #dde3e8;
+  color: #0095f8;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 1.25rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  height: 3.375rem;
+}
+
+/*
+          Radio inputs
 --------------------------------*/
 .checkout__img-cards {
-  background-image: url(/images/cards.png);
-  background-repeat: no-repeat;
-  background-position-x: 800px;
-  background-size: 100px;
+  background: url("/images/cards.png") 100% 0 no-repeat;
+  background-size: 6.25rem;
 }
-.checkout__img-paypal{
-background: url(/images/paypal.png) 850px 40px no-repeat;
+.checkout__img-paypal {
+  background: url("/images/paypal.png") 95% 25% no-repeat;
 }
 .checkout__label--radio {
   display: flex;
   justify-content: space-between;
-  width: 95%;
+  width: 85%;
   color: #1b2125;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
-  margin-left: 35px;
-  padding-top: 4px;
+  margin-left: 2.188rem;
+  padding-top: 0.25rem;
+}
+.checkout__label--radio > span {
+  font-weight: 600;
 }
 .checkout__label__desc {
   color: grey;
-  font-size: 16px;
-  line-height: 26px;
-  padding: 0 35px;
-  max-width: 350px;
-  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.625rem;
+  padding: 0 0 0 2.188rem;
+  max-width: 21.875rem;
 }
 .checkout__label__desc--wider {
   color: grey;
-  font-size: 16px;
-  line-height: 26px;
-  padding: 0 35px;
-  max-width: 450px;
-  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.625rem;
+  padding: 0 2.188rem;
+  max-width: 30rem;
+  margin-bottom: 1.875rem;
 }
 .checkout__radiocheck {
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 1.125rem;
+  height: 1.125rem;
 }
 input[type='radio'] {
   -webkit-appearance:none;
-  border:1px solid #d4d9dd;
+  border: 0.063rem solid #d4d9dd;
   border-radius:50%;
   outline:none;
 }
@@ -176,49 +192,49 @@ input[type='radio']:checked:before {
  
 }
 input[type='radio']:checked {
-  border:1px solid #0095f8;
+  border: 0.063rem solid #0095f8;
 }
 
 /*
-      Checkout selects
+          Selects
 --------------------------------*/
 .checkout__select-list {
   width: 100%;
-  height: 54px;
-  margin-bottom: 33px;
-  padding: 16px 25px;
+  height: 3.375rem;
+  margin-bottom: 2.063rem;
+  padding: 1rem 1.563rem;
   color: #788995;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
-  border: 1px solid #dde3e8;
-  border-radius: 8px;
+  border: 0.063rem solid #dde3e8;
+  border-radius: 0.5rem;
 }
 
 /*
-      Checkout fieldsets
+          Fieldsets
 --------------------------------*/
 fieldset {
-  border: 1px solid #dde3e8;
-  border-radius: 8px;
-  padding: 40px 38px;
+  border: 0.063rem solid #dde3e8;
+  border-radius: 0.5rem;
+  padding: 2.5rem 2.375rem;
 }
 fieldset + div {
-  border: 1px solid #dde3e8;
-  border-radius: 8px;
-  padding: 36px 40px;
-  margin-top: 25px;
-  margin-bottom: 50px;
+  border: 0.063rem solid #dde3e8;
+  border-radius: 0.5rem;
+  padding: 2.25rem 2.5rem;
+  margin-top: 1.563rem;
+  margin-bottom: 3.125rem;
 }
 
 /*
-        Checkout Submit
+          Submit
 --------------------------------*/
 .checkout__submit {
   display: flex;
   justify-content: space-between;
   align-items: center;
   clear: both;
-  margin-bottom: 150px;
+  margin-bottom: 9.375rem;
 }
 .checkout__link {
   text-decoration: none;
@@ -230,8 +246,8 @@ fieldset + div {
 .checkout__btn--submit {
   background-color: #0077e2;
   color: #ffffff;
-  padding: 18px 43px;
-  font-size: 14px;
+  padding: 1.125rem 2.688rem;
+  font-size: 0.875rem;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -245,43 +261,34 @@ fieldset + div {
 }
 .ship-info .col {
   width: 50%;
-  border: 1px solid #dde3e8;
+  border: 0.063rem solid #dde3e8;
 }
 .ship-info article {
-  padding: 31px 50px;
-  line-height: 26px;
+  padding: 1.938rem 3.125rem;
+  line-height: 1.625rem;
   color: #788995;
 }
-.cheackout__wrapper {
-  border: 1px solid #dde3e8;
-  width: 50%;
-  float: left;
-  margin-bottom: 50px;
-  padding: 35px 40px;
-}
-.checkout__label--radio span {
-  font-weight: 600;
+.checkout__wrapper {
+  border: 0.063rem solid #dde3e8;
+  border-radius: 0.5rem;
+  margin-bottom: 3.125rem;
+  padding: 2.188rem 2.5rem;
 }
 
 /*------------------------------
         Payment Info 
 --------------------------------*/
-fieldset > div:nth-last-child(1), 
-fieldset > div:nth-last-child(2) {
-  width: 20%;
-  float: left;
+fieldset > .checkout__divider > div:nth-child(1) {
+  width: 100%;
 }
-fieldset > div:nth-last-child(3) {
-  width: 60%;
-  float: left;
-}
+
 /*------------------------------
            Summary 
 --------------------------------*/
 .summary {
   background-color: #f8fafb;
   padding: 3.125rem;
-  max-width: 390px;
+  max-width: 24.375rem;
 }
 
 /*
@@ -292,7 +299,7 @@ fieldset > div:nth-last-child(3) {
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 0 1.563rem 0;
-  border-bottom: 1px solid #e4eaee;
+  border-bottom: 0.063rem solid #e4eaee;
   font-size: 1.5rem;
   color: #1b2125;
 }
@@ -301,14 +308,14 @@ fieldset > div:nth-last-child(3) {
         Summary badge
 --------------------------------*/
 .summary__badge {
-  font-size: 14px;
+  font-size: 0.875rem;
   background-color: blue;
   color: #ffffff;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   text-align: center;
-  padding: 5px;
+  padding: 0.313rem;
 }
 
 /*
@@ -316,10 +323,10 @@ fieldset > div:nth-last-child(3) {
 --------------------------------*/
 .summary__product {
   padding: 2.875rem 0;
-  border-bottom: 1px solid #e4eaee;
+  border-bottom: 0.063rem solid #e4eaee;
 }
 .summary__product li {
-    padding-bottom: 25px;
+    padding-bottom: 1.563rem;
     display: inline-block;
     clear: both;
 }
@@ -332,11 +339,11 @@ fieldset > div:nth-last-child(3) {
 .summary__img {
   display: inline-block;
   float: left;
-  padding-right: 12px;
+  padding-right: 0.75rem;
 }
 .summary__price {
   display: block;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
@@ -348,7 +355,7 @@ fieldset > div:nth-last-child(3) {
   border: none;
   cursor: pointer;
   padding: 1.063rem 0;
-  border-bottom: 1px solid #e4eaee;
+  border-bottom: 0.063rem solid #e4eaee;
   width: 100%;
   font-size: 0.875rem;
   color: #1b2125;
@@ -359,39 +366,39 @@ fieldset > div:nth-last-child(3) {
 }
 .summary__voucher {
   display: none;
-  padding: 20px 0;
-  border-bottom: 1px solid #e4eaee;
+  padding: 1.25rem 0;
+  border-bottom: 0.063rem solid #e4eaee;
 }
 .voucher__label{
   color: #d4d9dd;
   display: block;
-  font-size: 12px;
-  margin-bottom: 6px;
+  font-size: 0.75rem;
+  margin-bottom: 0.375rem;
 }
 .voucher__input{
   width: 100%;
-  height: 24px;
-  border: 1px solid #dde3e8;
-  border-radius: 8px;
-  font-size: 16px;
-  padding: 0 25px;
+  height: 1.5rem;
+  border: 0.063rem solid #dde3e8;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  padding: 0 1.563rem;
   color: #1b2125;
 }
 .voucher__btn--submit {
   background-color: #0077e2;
   color: #ffffff;
-  padding: 4px 14px;
-  font-size: 14px;
+  padding: 0.25rem 0.875rem;
+  font-size: 0.875rem;
   text-transform: capitalize;
   font-weight: 600;
-  margin-top: 10px;
+  margin-top: 0.625rem
 }
 
 /*
         Table total
 --------------------------------*/
 .sr-only {
-  text-indent: -99999px;
+  text-indent: -6249.938rem;
 }
 .total{
   margin-top: 0.875rem;
@@ -419,6 +426,6 @@ fieldset > div:nth-last-child(3) {
 }
 
 .total__result{
-  border-top: 1px solid #e4eaee;
+  border-top: 0.063rem solid #e4eaee;
 }
 
