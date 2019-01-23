@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+      <main>
+  
+        <!-- Breadcrumbs -->
+        <ol aria-label="Rastro de migas">
+          <li>Customer info</li>
+          <li>Shipping info</li>
+          <li aria-current="true">Payment selection</li>
+        </ol>
+
+        <form action="">
+          <h1>Payment Selection</h1>
+          <fieldset>
+            <div>
+              <input type="radio" name="payment" id="creditCard">
+              <label for="creditCard" aria-describedby="descCreditCard">Credit Card</label>
+              <p id="descCreditCard">Safe money transfer using your bank account. Visa, Maestro, Discover, American Express.</p>
+            </div>
+            <div>
+              <label for="creditCardNumber">Card number</label>
+              <input type="number" id="creditCardNumber" placeholder="0000 0000 0000 0000">
+            </div>
+            <div>
+              <label for="creditCardName">Name on card</label>
+              <input type="text" id="creditCardName">
+            </div>
+            <div>
+              <label for="creditCardExpiry">Expiry date</label>
+              <input type="number" id="creditCardExpiry" placeholder="MM/YY">
+            </div>
+            <div>
+              <label for="creditCardCVV">CVV Code</label>
+              <input type="number" id="creditCardCVV" maxlength="3">
+              <button type="button">?</button>
+            </div>
+          </fieldset>
+  
+          <div>
+            <input type="radio" name="payment" id="payPal">
+            <label for="payPal" aria-describedby="descPayPal">PayPal</label>
+            <p id="descPayPal">You will be redirected to PayPal website to complete your purchase securely.</p>
+          </div>
+  
+          <div>
+            <a href="#">Back to Shipping Info</a>
+            <button type="submit">Complete order</button>
+          </div>
+        </form>    
+      </main>
+
+      <aside>
+        <h1>Shopping Cart <span aria-label="Número de productos">2</span></h1>
+        <ul>
+          <li>
+            <a href="#">
+              <img src="..." alt="">
+              Lightweight College Backpack
+              <span aria-label="precio">€ 99.90</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="..." alt="">
+              Business Casual Leather Watch Waterproof
+              <span aria-label="precio">€ 69.90</span>
+            </a>
+          </li>
+        </ul>
+        <div>
+          <button type="button">Have a Voucher?</button>
+          <form action="">
+            <label for="code">Insert vaucher code</label>
+            <input type="text" id="code">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <table>
+          <caption class="sr-only">Totales del carrito</caption>
+          <tr>
+            <th scope="row">Subtotal</th>
+            <td>€ 169.80</td>
+          </tr>
+          <tr>
+            <th scope="row">Shipping</th>
+            <td>free</td>
+          </tr>
+          <tr class="">
+            <th scope="row">Total</th>
+            <td>€ 169.80</td>
+          </tr>
+        </table>
+      </aside>
+    </div>
+</body>
+</html>
