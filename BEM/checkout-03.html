@@ -12,101 +12,103 @@
 <body>
 
 
-    <main>
-
-      <!-- Breadcrumbs -->
-      <ol aria-label="Rastro de migas" class="breadcrum">
-        <li>Customer info</li>
-        <li>Shipping info</li>
-        <li aria-current="true">Payment selection</li>
-      </ol>
-
-      <!-- Form -->
-      <form action="" class="checkout">
-        <h1 class="checkout__title">Payment Selection</h1>
-        <fieldset>
-          <div class="checkout__img-cards">
-            <input type="radio" name="payment" id="creditCard" class="checkout__radiocheck">
-            <label for="creditCard" aria-describedby="descCreditCard" class="checkout__label checkout__label--radio">Credit Card</label>
-            <p id="descCreditCard" class="checkout__label__desc--wider">Safe money transfer using your bank account. Visa, Maestro, Discover, American Express.</p>
-          </div>
-          <div>
-            <label for="creditCardNumber" class="checkout__label">Card number</label>
-            <input type="number" id="creditCardNumber" placeholder="0000 0000 0000 0000" class="checkout__input">
-          </div>
-          <div class="checkout__divider">
-            <div>
-              <label for="creditCardName" class="checkout__label">Name on card</label>
-              <input type="text" id="creditCardName" class="checkout__input">
+    <div class="container">
+      <main>
+  
+        <!-- Breadcrumbs -->
+        <ol aria-label="Rastro de migas" class="breadcrum">
+          <li>Customer info</li>
+          <li>Shipping info</li>
+          <li aria-current="true">Payment selection</li>
+        </ol>
+  
+        <!-- Form -->
+        <form action="" class="checkout">
+          <h1 class="checkout__title">Payment Selection</h1>
+          <fieldset>
+            <div class="checkout__img-cards">
+              <input type="radio" name="payment" id="creditCard" class="checkout__radiocheck">
+              <label for="creditCard" aria-describedby="descCreditCard" class="checkout__label checkout__label--radio">Credit Card</label>
+              <p id="descCreditCard" class="checkout__label__desc--wider">Safe money transfer using your bank account. Visa, Maestro, Discover, American Express.</p>
             </div>
             <div>
-              <label for="creditCardExpiry" class="checkout__label">Expiry date</label>
-              <input type="number" id="creditCardExpiry" placeholder="MM/YY" class="checkout__input">
+              <label for="creditCardNumber" class="checkout__label">Card number</label>
+              <input type="number" id="creditCardNumber" placeholder="0000 0000 0000 0000" class="checkout__input">
             </div>
-            <div>
-              <label for="creditCardCVV" class="checkout__label">CVV Code</label>
-              <input type="number" id="creditCardCVV" maxlength="3" class="checkout__input">
+            <div class="checkout__divider">
+              <div>
+                <label for="creditCardName" class="checkout__label">Name on card</label>
+                <input type="text" id="creditCardName" class="checkout__input">
+              </div>
+              <div>
+                <label for="creditCardExpiry" class="checkout__label">Expiry date</label>
+                <input type="number" id="creditCardExpiry" placeholder="MM/YY" class="checkout__input">
+              </div>
+              <div>
+                <label for="creditCardCVV" class="checkout__label">CVV Code</label>
+                <input type="number" id="creditCardCVV" maxlength="3" class="checkout__input">
+              </div>
             </div>
+          </fieldset>
+  
+          <div class="checkout__img-paypal">
+            <input type="radio" name="payment" id="payPal" class="checkout__radiocheck">
+            <label for="payPal" aria-describedby="descPayPal" class="checkout__label checkout__label--radio">PayPal</label>
+            <p id="descPayPal" class="checkout__label__desc--wider">You will be redirected to PayPal website to complete your purchase securely.</p>
           </div>
-        </fieldset>
-
-        <div class="checkout__img-paypal">
-          <input type="radio" name="payment" id="payPal" class="checkout__radiocheck">
-          <label for="payPal" aria-describedby="descPayPal" class="checkout__label checkout__label--radio">PayPal</label>
-          <p id="descPayPal" class="checkout__label__desc--wider">You will be redirected to PayPal website to complete your purchase securely.</p>
-        </div>
-
-        <div class="checkout__submit">
-          <a href="checkout-02.html" class="link checkout__link"> Back to Shipping Info</a>
-          <button type="submit" class="btn checkout__btn--submit">Complete order</button>
-        </div>
-      </form>
-
-    </main>
-
-    <!-- Resumen carrito -->
-    <aside class="summary">
-      <h1 class="title summary__title">Shopping Cart <span aria-label="Número de productos" class="summary__badge">2</span></h1>
-      <ul class="summary__product">
-        <li>
-          <a href="#" class="summary__link">
-            <img src="../images/producto-1.jpg" alt="" class="summary__img">
-            Lightweight College Backpack
-            <span aria-label="precio" class="summary__price">€ 99.90</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="../images/producto-2.jpg" alt="" class="summary__img">
-            Business Casual Leather Watch Waterproof
-            <span aria-label="precio" class="summary__price">€ 69.90</span>
-          </a>
-        </li>
-      </ul>
-      <div>
-        <button type="button" class="btn summary__btn" aria-haspopup="true" aria-labelledby="toggleVoucher" onclick="myFunction()">Have a Voucher? <span>▼</span></button>
-        <form action="" class="voucher summary__voucher" id="toogleVoucher">
-          <label for="code" class="label voucher__label">Insert vaucher code</label>
-          <input type="text" id="code" class="input voucher__input">
-          <button type="submit" class="btn voucher__btn--submit">Submit</button>
+  
+          <div class="checkout__submit">
+            <a href="checkout-02.html" class="link checkout__link"> Back to Shipping Info</a>
+            <button type="submit" class="btn checkout__btn--submit">Complete order</button>
+          </div>
         </form>
-      </div>
-      <table class="total">
-        <caption class="sr-only">Totales del carrito</caption>
-        <tr>
-          <th scope="row">Subtotal</th>
-          <td>€ 169.80</td>
-        </tr>
-        <tr>
-          <th scope="row">Shipping</th>
-          <td>free</td>
-        </tr>
-        <tr class="total__result">
-          <th scope="row">Total</th>
-          <td>€ 169.80</td>
-        </tr>
-      </table>
-    </aside>
+  
+      </main>
+  
+      <!-- Resumen carrito -->
+      <aside class="summary">
+        <h1 class="title summary__title">Shopping Cart <span aria-label="Número de productos" class="summary__badge">2</span></h1>
+        <ul class="summary__product">
+          <li>
+            <a href="#" class="summary__link">
+              <img src="img/producto-1.jpg" alt="" class="summary__img">
+              Lightweight College Backpack
+              <span aria-label="precio" class="summary__price">€ 99.90</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/producto-2.jpg" alt="" class="summary__img">
+              Business Casual Leather Watch Waterproof
+              <span aria-label="precio" class="summary__price">€ 69.90</span>
+            </a>
+          </li>
+        </ul>
+        <div>
+          <button type="button" class="btn summary__btn" aria-haspopup="true" aria-labelledby="toggleVoucher" onclick="myFunction()">Have a Voucher? <span>▼</span></button>
+          <form action="" class="voucher summary__voucher" id="toogleVoucher">
+            <label for="code" class="label voucher__label">Insert vaucher code</label>
+            <input type="text" id="code" class="input voucher__input">
+            <button type="submit" class="btn voucher__btn--submit">Submit</button>
+          </form>
+        </div>
+        <table class="total">
+          <caption class="sr-only">Totales del carrito</caption>
+          <tr>
+            <th scope="row">Subtotal</th>
+            <td>€ 169.80</td>
+          </tr>
+          <tr>
+            <th scope="row">Shipping</th>
+            <td>free</td>
+          </tr>
+          <tr class="total__result">
+            <th scope="row">Total</th>
+            <td>€ 169.80</td>
+          </tr>
+        </table>
+      </aside>
+    </div>
 
 <script src="../BEM/js/main.js"></script>
 </body>
